@@ -145,9 +145,10 @@ and in there you want to make a file called 'iOS-build.yml' in there you will wa
           path: iOS/
 
 Then after the action builds you'll go to the action tab in the repository you the should
-see a green arrow with the .yml file name then you click the name and i there you should get
+see a green arrow with the .yml file name then you click the name and in there you should get
 a thing that says at Artifacts under that there should be a zip file called helloworld that
-contains the iOS directory build
+contains the iOS directory build. But if you want just the .app you can go to 
+'helloworld/Xcode/Hello World/build/Debug-iphonesimulator/Hello World.app'.
 
 Next steps
 ==========
