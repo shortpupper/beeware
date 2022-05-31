@@ -96,8 +96,8 @@ see the simulator start, and eventually open your iOS application:
 .. image:: ../images/iOS/tutorial-5.png
    :alt: Hello World Tutorial 5 window, on iOS
 
-Using github workflows
-======================
+Using github workflows (PUT IN HOWTO)
+=====================================
 First you'll need to make a github repository with the projects files and directory(s)
 so in your helloworld directory on your pc you'll need to copy the src directory to the
 repository then you'll need to copy the .gitignore, LICENSE, pyproject.toml, and README.rst
