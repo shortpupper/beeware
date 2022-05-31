@@ -96,9 +96,48 @@ see the simulator start, and eventually open your iOS application:
 .. image:: ../images/iOS/tutorial-5.png
    :alt: Hello World Tutorial 5 window, on iOS
 
-Using github actions
-====================
+Using github workflows
+======================
+First you'll need to make a github repository with the projects files and directory(s)
+so in your helloworld directory on your pc you'll need to copy the src directory to the
+repository then you'll need to copy the .gitignore, LICENSE, pyproject.toml, and README.rst
+to the repository after that you will need to make a new folder and call it '.github/workflows'
+and in there you want to make a file called 'iOS-build.yml' in there you will want to add the code:
+.. code-block::
 
+  name: iOS compiler
+
+  on:
+    push:
+      branches: [ main ]
+    pull_request:
+      branches: [ main ]
+
+  permissions:
+    contents: read
+
+  jobs:
+    build:
+  
+      runs-on: macos-latest
+  
+      steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install briefcase
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: briefcase create
+        run: | 
+          briefcase create iOS
+      - name: briefcase build
+        run: | 
+          python -c "import subprocess; stdout, stderr = subprocess.Popen(['briefcase', 'build', 'iOS'], stdin=subprocess.PIPE, stdout=subprocess.PIPE).communicate(input=b'19\n'); print(stdout)"
 
 
 Next steps
