@@ -41,7 +41,7 @@ can be deployed to your mobile device, too!
 
 iOS applications can only be compiled on macOS. You'll need `Xcode
 <https://apps.apple.com/au/app/xcode/id497799835?mt=12>`__, which you should
-have installed in :doc:`Tutorial 0 <../tutorial-0>`.
+have installed in :doc:`Tutorial 0 <../tutorial-0>`. Or you could use github actions.
 
 Once you've got Xcode installed, :doc:`let's build our app for iOS! <iOS>`
 
