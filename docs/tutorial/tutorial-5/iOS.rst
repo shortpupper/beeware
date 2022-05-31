@@ -138,7 +138,16 @@ and in there you want to make a file called 'iOS-build.yml' in there you will wa
       - name: briefcase build
         run: | 
           python -c "import subprocess; stdout, stderr = subprocess.Popen(['briefcase', 'build', 'iOS'], stdin=subprocess.PIPE, stdout=subprocess.PIPE).communicate(input=b'19\n'); print(stdout)"
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: helloworld
+          path: iOS/
 
+Then after the action builds you'll go to the action tab in the repository you the should
+see a green arrow with the .yml file name then you click the name and i there you should get
+a thing that says at Artifacts under that there should be a zip file called helloworld that
+contains the iOS directory build
 
 Next steps
 ==========
